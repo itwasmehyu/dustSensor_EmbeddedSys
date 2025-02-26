@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Dust Monitor</title>
+
+    <!-- Leaflet CSS (Bản đồ) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Chart.js (Biểu đồ) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PM2.5 Dust Monitor</h1>
+ 
+    <div class="container">
+        <!-- Cột bên trái: Biểu đồ và giá trị PM2.5 -->
+        <div class="left-column">
+            <canvas id="dustChart"></canvas>
+            <div class="value-box">
+                <span id="dustValueBox">0 µg/m³</span>
+                <span id="warningIcon" style="display:none; color:red;">⚠️</span>
+            </div>
+        </div>
+
+        <!-- Cột bên phải: Bản đồ -->
+        <div class="right-column">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS (Bản đồ) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Dust Monitor</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .value-box {
+            border: 2px solid #009688;
+            border-radius: 8px;
+            padding: 10px;
+            width: 200px;
+            margin: 20px auto;
+            background-color: #e0f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        #warningIcon {
+            display: none;
+            color: red;
+            font-size: 1.5em;
+            animation: blink 1s infinite alternate;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>PM2.5 Dust Monitor</h1>
+    
+    <canvas id="dustChart" width="400" height="200"></canvas>
+
+    <div class="value-box">
+        <span id="dustValueBox">0 µg/m³</span>
+        <span id="warningIcon">⚠️</span>
+    </div>
+
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html> -->
