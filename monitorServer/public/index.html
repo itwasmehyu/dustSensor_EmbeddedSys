@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Dust Monitor</title>
+
+    <!-- Leaflet CSS (Bản đồ) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Chart.js (Biểu đồ) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Annotation plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PM2.5 Dust Monitor</h1>
+ 
+    <div class="container">
+        <!-- Cột bên trái: Biểu đồ và giá trị PM2.5 -->
+        <div class="left-column">
+            <canvas id="dustChart"></canvas>
+            <div class="value-box">
+                <p> Current Dust Density: </p>
+                <span id="dustValueBox">0 µg/m³</span>
+                <span id="warningIcon" style="display:none; color:red;">⚠️</span>
+            </div>
+            <div class="threshold-box">
+                <!-- <p>Warning Settings</p> -->
+                <div class="threshold-control">
+                    <label for="thresholdSlider">Warning Threshold Configuration: <span id="thresholdValue">150</span> µg/m³</label>
+                    <input type="range" id="thresholdSlider" min="0" max="200" value="150" step="1">
+                </div>
+                <button id="showHistoryBtn" class="history-btn">Show History</button>
+            </div>
+
+            <!-- Modal for threshold history -->
+            <div id="thresholdModal" class="modal" style="z-index: 9999;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Threshold Violation History</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <table id="thresholdHistory">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>PM2.5 Value</th>
+                                    <th>Threshold</th>
+                                    <th>Duration</th>
+                                    <th>Severity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="thresholdHistoryBody">
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cột bên phải: Bản đồ và chú thích -->
+        <div class="right-column">
+            <div id="map"></div>
+            
+            <!-- Chú thích chất lượng không khí -->
+            <div class="air-quality-legend">
+                <h3>Chất lượng không khí (PM2.5)</h3>
+                <div class="legend-item">
+                    <div class="color-box blue"></div>
+                    <span>100-125 µg/m³: Kém</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box orange"></div>
+                    <span>125-150 µg/m³: Xấu</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box red"></div>
+                    <span>150-175 µg/m³: Rất xấu</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box darkred"></div>
+                    <span>>175 µg/m³: Nguy hiểm</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS (Bản đồ) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
