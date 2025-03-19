@@ -1,0 +1,21 @@
+version: "3.1"
+stories:
+- story: Greet and respond
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Ask time
+  steps:
+  - intent: ask_time
+  - action: action_tell_time
+
+- story: Ask weather
+  steps:
+  - intent: ask_weather
+  - action: action_tell_weather

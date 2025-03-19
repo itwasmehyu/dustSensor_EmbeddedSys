@@ -1,0 +1,27 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Xin chào
+    - Hello
+    - Hi
+    - Chào bạn
+
+- intent: goodbye
+  examples: |
+    - Tạm biệt
+    - Bye
+    - Hẹn gặp lại
+    - Chúc bạn một ngày tốt lành
+
+- intent: ask_time
+  examples: |
+    - Mấy giờ rồi?
+    - Bây giờ là mấy giờ?
+    - Cho tôi biết thời gian hiện tại
+
+- intent: ask_weather
+  examples: |
+    - Hôm nay thời tiết thế nào?
+    - Trời có mưa không?
+    - Thời tiết hôm nay ra sao?
