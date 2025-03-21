@@ -15,6 +15,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
 </head>
 <body>
     <h1>PM2.5 Dust Monitor</h1>
@@ -89,11 +90,21 @@
                 </div>
             </div>
         </div>
+        <!-- Khung chat -->
+        <img class="icon-chat" id="icon-chat" src="../public/Facebook_Messenger_logo_2020.png" alt="chat" />
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box"></div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Nhập tin nhắn...">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
     </div>
 
     <!-- Leaflet JS (Bản đồ) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script src="chat.js"></script>
 </body>
 </html>

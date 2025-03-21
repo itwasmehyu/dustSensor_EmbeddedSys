@@ -13,15 +13,14 @@ nlu:
     - Bye
     - Hẹn gặp lại
     - Chúc bạn một ngày tốt lành
-
-- intent: ask_time
-  examples: |
-    - Mấy giờ rồi?
-    - Bây giờ là mấy giờ?
-    - Cho tôi biết thời gian hiện tại
+    - Cảm ơn bạn
 
 - intent: ask_weather
   examples: |
     - Hôm nay thời tiết thế nào?
-    - Trời có mưa không?
-    - Thời tiết hôm nay ra sao?
+    - Chất lượng không khí hôm nay như thế nào?
+    - Độ bụi hôm nay ra sao?
+    - Khi không khí ô nhiễm, tôi cần làm gì để bảo vệ sức khỏe?
+    - Không khí hôm nay như thế nào?
+    - Đưa ra lời khuyên về chất lượng không khí hiện tại?
+    - Hôm nay có nên hoạt động ngoài trời không?
