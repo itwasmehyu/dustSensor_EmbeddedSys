@@ -12,3 +12,4 @@ responses:
 
 actions:
   - action_tell_air_quality
+  - action_default_fallback

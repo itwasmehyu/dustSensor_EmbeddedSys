@@ -7,36 +7,21 @@ class ActionTellAirQuality(Action):
         return "action_tell_air_quality"
 
     def run(self, dispatcher: CollectingDispatcher, tracker, domain):
-        # api_url = "http://localhost:3030/api/dust"
-        # try:
-        #     response = requests.get(api_url)
-        #     data = response.json()
-        #     # kiểu dữ liệu {
-        #     #   "city": "Hanoi",
-        #     #   "pm2_5": 85
-        #     # }
-        #     if response.status_code == 200:
-        #         pm25 = data.get("pm2_5", 0)
-        #         city = data.get("city", "khu vực của bạn")
-        #         advice = self.get_advice(pm25)
+        api_url = "http://localhost:3030/api/new-dust"
+        try:
+            response = requests.get(api_url, timeout=5)
+            if response.status_code == 200:
+                data = response.json()
+                pm25 = data.get("dust_density", 0)
+                advice = self.get_advice(pm25)
 
-        #         message = f"Chất lượng không khí tại {city}: PM2.5 = {pm25} µg/m³. {advice}"
-        #     else:
-        #         message = "Xin lỗi, tôi không thể lấy dữ liệu không khí lúc này."
+                message = f"Chất lượng không khí: PM2.5 = {pm25} µg/m³. {advice}"
+            else:
+                message = "Xin lỗi, tôi không thể lấy dữ liệu không khí lúc này."
         
-        # except Exception as e:
-            # message = "Đã có lỗi xảy ra khi lấy dữ liệu không khí."
+        except requests.exceptions.RequestException:
+            message = "Đã có lỗi xảy ra khi kết nối đến API dữ liệu không khí."
 
-        # fix dữ liệu
-        data = {
-            "city": "Hanoi",
-            "pm2_5": 85
-        }
-        pm25 = data.get("pm2_5", 0)
-        city = data.get("city", "khu vực của bạn")
-        advice = self.get_advice(pm25)
-
-        message = f"Chất lượng không khí tại {city}: PM2.5 = {pm25} µg/m³. {advice}"
         dispatcher.utter_message(text=message)
         return []
 
@@ -54,3 +39,12 @@ class ActionTellAirQuality(Action):
             return "Không khí rất ô nhiễm, hãy hạn chế ra ngoài và đóng cửa sổ."
         else:
             return "Ô nhiễm nghiêm trọng! Nên ở trong nhà và sử dụng máy lọc không khí."
+
+class ActionDefaultFallback(Action):
+    def name(self):
+        return "action_default_fallback"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker, domain):
+        message = "Xin chào tôi là bot trả lời tự động đưa ra lời khuyên về độ bụi trong không khí?"
+        dispatcher.utter_message(text=message)
+        return []

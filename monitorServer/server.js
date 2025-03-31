@@ -65,6 +65,26 @@ app.get('/api/dust', async (req, res) => {
         res.status(500).send('Error fetching data');
     }
 });
+// API để lấy dữ liệu từ MongoDB
+app.get('/api/new-dust', async (req, res) => {
+    try {
+        const dustDataCollection = db.collection('dustData');
+        const latestDustData = await dustDataCollection
+            .find()
+            .sort({ timestamp: -1 }) // Sắp xếp giảm dần theo timestamp (mới nhất trước)
+            .limit(1) // Chỉ lấy 1 dòng mới nhất
+            .toArray();
+
+        if (latestDustData.length > 0) {
+            res.json(latestDustData[0]); // Trả về object thay vì array
+        } else {
+            res.status(404).json({ message: 'No data found' });
+        }
+    } catch (error) {
+        console.error('Error fetching latest data from MongoDB:', error);
+        res.status(500).send('Error fetching data');
+    }
+});
 
 // API để lưu lịch sử ngưỡng vào MongoDB
 app.post('/api/threshold-history', async (req, res) => {
