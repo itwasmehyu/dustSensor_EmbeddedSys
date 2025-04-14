@@ -91,12 +91,12 @@
             </div>
         </div>
         <!-- Khung chat -->
-        <img class="icon-chat" id="icon-chat" src="../public/Facebook_Messenger_logo_2020.png" alt="chat" />
+        <img class="icon-chat" id="icon-chat" src="Facebook_Messenger_logo_2020.png" alt="chat" />
         <div class="chat-container">
             <div class="chat-box" id="chat-box"></div>
             <div class="input-container">
                 <input type="text" id="user-input" placeholder="Nhập tin nhắn...">
-                <button onclick="sendMessage()">Gửi</button>
+                <button onclick="sendMessage()" onkeydown="if(event.key === 'Enter') sendMessage()">Gửi</button>
             </div>
         </div>
     </div>
