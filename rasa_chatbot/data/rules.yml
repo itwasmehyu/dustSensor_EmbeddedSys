@@ -1,0 +1,32 @@
+# version: "3.1"
+
+# rules:
+
+# - rule: Trả lời khi người dùng hỏi chất lượng không khí
+#   steps:
+#     - intent: ask_weather
+#     - action: action_tell_air_quality
+
+version: "3.1"
+
+rules:
+
+- rule: Trả lời khi người dùng hỏi chất lượng không khí
+  steps:
+    - intent: ask_air_quality
+    - action: action_tell_air_quality
+
+- rule: Trả lời khi người dùng hỏi bảo vệ sức khỏe
+  steps:
+    - intent: ask_health_protection
+    - action: action_health_protection
+
+# - rule: Trả lời khi người dùng hỏi thời tiết
+#   steps:
+#     - intent: ask_weather
+#     - action: action_weather_forecast
+
+- rule: Trả lời khi người dùng hỏi hoạt động ngoài trời
+  steps:
+    - intent: ask_outdoor_activities
+    - action: action_outdoor_activities

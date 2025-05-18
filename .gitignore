@@ -1,1 +1,9 @@
+<<<<<<< Updated upstream
 node_modules
+=======
+monitorServer/node_modules/
+
+sensorServer\rasa_chatbot\requirements.txt
+
+sensorServer\rasa_chatbot\pip.ini
+>>>>>>> Stashed changes

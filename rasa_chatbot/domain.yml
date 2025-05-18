@@ -1,0 +1,117 @@
+# version: "3.1"
+# intents:
+#   - greet
+#   - goodbye
+#   - ask_weather
+
+# responses:
+#   utter_greet:
+#     - text: "Xin chào! Tôi có thể giúp gì cho bạn?"
+#   utter_goodbye:
+#     - text: "Tạm biệt! Hẹn gặp lại!"
+
+# actions:
+#   - action_tell_air_quality
+#   - action_default_fallback
+
+
+
+
+version: "3.1"
+intents:
+  - greet
+  - goodbye
+  - ask_weather
+  - ask_health_protection
+  - ask_outdoor_activities
+  - ask_air_quality
+
+responses:
+  utter_greet:
+    - text: "Xin chào! Tôi có thể giúp gì cho bạn?"
+  utter_goodbye:
+    - text: "Tạm biệt! Hẹn gặp lại!"
+  utter_health_protection:
+      - text: |
+          Để bảo vệ sức khỏe, bạn nên:
+          1. Đeo khẩu trang khi ra ngoài
+          2. Giữ ẩm không khí trong nhà
+          3. Rửa tay thường xuyên
+          4. Tránh tiếp xúc với không khí ô nhiễm  
+  # utter_weather_forecast:
+  #   - text: "Dự báo thời tiết hôm nay:"
+  #     - "Nhiệt độ: {temperature}°C"
+  #     - "Độ ẩm: {humidity}%"
+  #     - "Chất lượng không khí: {air_quality}"
+  utter_outdoor_activities:
+    - text: |
+        Các hoạt động ngoài trời phù hợp:
+        1. Đi dạo trong công viên
+        2. Chạy bộ
+        3. Đạp xe
+        Lưu ý: Tránh các hoạt động ngoài trời khi chất lượng không khí xấu
+
+actions:
+  - action_tell_air_quality
+  - action_default_fallback
+  - action_health_protection
+  # - action_weather_forecast
+  - action_outdoor_activities
+
+
+# slots:
+#   credentials:
+#     type: any
+#     initial_value: null
+
+
+
+
+
+
+# version: "3.1"
+
+# intents:
+#   - greet
+#   - goodbye
+#   - ask_weather
+#   - ask_health_protection
+#   - ask_outdoor_activities
+#   - ask_air_quality
+
+# responses:
+#   utter_greet:
+#     - text: "Xin chào! Tôi có thể giúp gì cho bạn?"
+#   utter_goodbye:
+#     - text: "Tạm biệt! Hẹn gặp lại!"
+#   utter_health_protection:
+#     - text: "Để bảo vệ sức khỏe, bạn nên:
+#       1. Đeo khẩu trang khi ra ngoài
+#       2. Giữ ẩm không khí trong nhà
+#       3. Rửa tay thường xuyên
+#       4. Tránh tiếp xúc với không khí ô nhiễm"
+#   utter_weather_forecast:
+#     - text: "Dự báo thời tiết hôm nay:
+#       Nhiệt độ: {temperature}°C
+#       Độ ẩm: {humidity}%
+#       Chất lượng không khí: {air_quality}"
+#   utter_outdoor_activities:
+#     - text: "Các hoạt động ngoài trời phù hợp:
+#       1. Đi dạo trong công viên
+#       2. Chạy bộ
+#       3. Đạp xe
+#       Lưu ý: Tránh các hoạt động ngoài trời khi chất lượng không khí xấu"
+
+# actions:
+#   - action_tell_air_quality
+#   - action_default_fallback
+#   - action_health_protection
+#   - action_weather_forecast
+#   - action_outdoor_activities
+
+# slots:
+#   credentials:
+#     type: any
+#     initial_value: null
+#     mappings:
+#       - type: from_text

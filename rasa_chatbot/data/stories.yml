@@ -1,0 +1,50 @@
+# version: "3.1"
+# stories:
+# - story: Greet and respond
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+
+# - story: Say goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_goodbye
+
+# - story: Ask weather
+#   steps:
+#   - intent: ask_weather
+#   - action: action_tell_air_quality
+
+
+
+version: "3.1"
+stories:
+- story: Greet and respond
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Ask about air quality
+  steps:
+  - intent: ask_air_quality
+  - action: action_tell_air_quality
+
+- story: Ask about health protection
+  steps:
+  - intent: ask_health_protection
+  - action: action_health_protection
+
+# - story: Ask about weather
+#   steps:
+#   - intent: ask_weather
+#   - action: action_weather_forecast
+
+- story: Ask about outdoor activities
+  steps:
+  - intent: ask_outdoor_activities
+  - action: action_outdoor_activities

@@ -1,0 +1,68 @@
+# version: "3.1"
+# nlu:
+# - intent: greet
+#   examples: |
+#     - Xin chào
+#     - Hello
+#     - Hi
+#     - Chào bạn
+
+# - intent: goodbye
+#   examples: |
+#     - Tạm biệt
+#     - Bye
+#     - Hẹn gặp lại
+#     - Chúc bạn một ngày tốt lành
+#     - Cảm ơn bạn
+
+# - intent: ask_weather
+#   examples: |
+#     - Hôm nay thời tiết thế nào?
+#     - Chất lượng không khí hôm nay như thế nào?
+#     - Độ bụi hôm nay ra sao?
+#     - Khi không khí ô nhiễm, tôi cần làm gì để bảo vệ sức khỏe?
+#     - Không khí hôm nay như thế nào?
+#     - Đưa ra lời khuyên về chất lượng không khí hiện tại?
+#     - Hôm nay có nên hoạt động ngoài trời không?
+
+
+
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Xin chào
+    - Hello
+    - Hi
+    - Chào bạn
+
+- intent: goodbye
+  examples: |
+    - Tạm biệt
+    - Bye
+    - Hẹn gặp lại
+    - Chúc bạn một ngày tốt lành
+    - Cảm ơn bạn
+
+# - intent: ask_weather
+#   examples: |
+#     - Hôm nay thời tiết thế nào?
+#     - Chất lượng không khí hôm nay như thế nào?
+#     - Độ bụi hôm nay ra sao?
+
+- intent: ask_health_protection
+  examples: |
+    - Khi không khí ô nhiễm, tôi cần làm gì để bảo vệ sức khỏe?
+    - Tôi cần làm gì để bảo vệ sức khỏe?
+    - Có cách nào bảo vệ sức khỏe không?
+
+- intent: ask_outdoor_activities
+  examples: |
+    - Hôm nay có nên hoạt động ngoài trời không?
+    - Tôi có thể làm gì ngoài trời không?
+    - Hoạt động ngoài trời nào phù hợp?
+
+- intent: ask_air_quality
+  examples: |
+    - Không khí hôm nay như thế nào?
+    - Đưa ra lời khuyên về chất lượng không khí hiện tại?

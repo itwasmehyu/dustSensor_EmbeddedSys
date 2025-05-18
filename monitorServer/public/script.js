@@ -20,6 +20,12 @@ const dustChart = new Chart(ctx, {
     },
     options: {
         scales: {
+            x: {
+                reverse: true,
+                grid: {
+                    drawBorder: false
+                }
+            },
             y: {
                 beginAtZero: true,
                 min: 0,
@@ -510,7 +516,11 @@ async function updateData() {
         dustChart.data.labels = data.map(entry => {
             // MongoDB trả về timestamp dạng ISO string hoặc Date object
             let date = new Date(entry.timestamp);
-            return date.toLocaleTimeString();
+            return date.toLocaleTimeString('vi-VN', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
         });
         
         dustChart.data.datasets[0].data = data.map(entry => Math.max(0, entry.dust_density));
